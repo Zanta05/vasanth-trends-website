@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8">
+
+<title>Order - Vasanth Trends</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    
+}
+
+body{
+    
+    background-color: rgb(255, 255, 255);
+
+}
+
+.search {
+    width: 350px;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    border-radius: 40px;
+
+}
+
+header{
+    
+    background:#111;
+    color:#fff;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    width:100%;
+    top:0;
+    left: 0;
+
+}
+header h1{
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:#ff3c00;
+}
+
+
+body{
+margin-top: 250px;
+font-family: Arial;
+background:#f5f5f5;
+text-align:center;
+}
+
+form{
+background:white;
+padding:20px;
+width:300px;
+margin:auto;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;
+}
+
+input,select{
+width:90%;
+padding:8px;
+margin:8px;
+}
+
+button{
+background:green;
+color:white;
+border:none;
+padding:10px;
+width:95%;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover {
+    transform: scaleY(1.15);
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Vasanth Trends</h1>
+
+     <input class="search" type="text" placeholder="🔍︎">
+
+   
+</header>
+
+<h2>Place Your Order</h2>
+<br>
+<form>
+<div class="order-box">
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="text" id="product" placeholder="Enter mobile number" >
+
+<input type="number" id="qty" placeholder="Quantity">
+
+<select id="size">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+</select>
+
+<input type="text" id="address" placeholder="Address">
+
+<button onclick="sendOrder()">
+Order via WhatsApp
+</button>
+
+</div>
+
+</form>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("product").value = params.get("product");
+
+
+function sendOrder(){
+
+var name=document.getElementById("name").value;
+var product=document.getElementById("product").value;
+var qty=document.getElementById("qty").value;
+var size=document.getElementById("size").value;
+var address=document.getElementById("address").value;
+
+var message=
+"New Order\n"+
+"Name: "+name+"\n"+
+"Product: "+product+"\n"+
+"Quantity: "+qty+"\n"+
+"Size: "+size+"\n"+
+"Address: "+address;
+
+var phone="916385421981";
+
+var url="https://wa.me/"+phone+"?text="+encodeURIComponent(message);
+
+window.open(url,"_blank");
+
+}
+
+</script>
+
+</body>
+</html>

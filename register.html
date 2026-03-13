@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register Form</title>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(to right,#3dabf5,#dd2476);
+}
+
+.container{
+background:#fff;
+padding:30px;
+width:350px;
+border-radius:8px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.title{
+font-size:28px;
+font-weight:600;
+text-align:center;
+margin-bottom:20px;
+}
+
+.input-box{
+margin:15px 0;
+}
+
+.input-box input{
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+outline:none;
+font-size:15px;
+}
+
+.input-box input:focus{
+border-color:#dd2476;
+}
+
+.button input{
+background:#dd2476;
+color:white;
+border:none;
+cursor:pointer;
+font-size:16px;
+}
+
+.button input:hover{
+background:#c51f65;
+}
+
+.login-link{
+text-align:center;
+margin-top:15px;
+font-size:14px;
+}
+
+.login-link a{
+color:#dd2476;
+text-decoration:none;
+font-weight:500;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="title">Register Form</div>
+
+<form action="#">
+
+<div class="input-box">
+<input type="text" placeholder="Enter Your Name" required>
+</div>
+
+<div class="input-box">
+<input type="email" placeholder="Enter Your Email" required>
+</div>
+
+<div class="input-box">
+<input type="tel" placeholder="Enter Your Mobile number" required>
+</div>
+
+<div class="input-box">
+<input type="password" placeholder="Create Password" required>
+</div>
+
+<div class="input-box">
+<input type="password" placeholder="Confirm Password" required>
+</div>
+
+<div class="input-box button">
+<input type="submit" value="Register">
+</div>
+
+</form>
+
+<div class="login-link">
+Already have account? <a href="login.html">Login</a>
+</div>
+
+<center><a href="vasanth13.html">Go to home</a></center>
+
+</div>
+
+
+
+</body>
+</html>
