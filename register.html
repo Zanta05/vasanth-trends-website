@@ -2,128 +2,427 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Register Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Vasanth Trends</title>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-background:linear-gradient(to right,#3dabf5,#dd2476);
+body {
+  background-color: #f5f5f5;
+  min-height: 100vh;
 }
 
-.container{
-background:#fff;
-padding:30px;
-width:350px;
-border-radius:8px;
-box-shadow:0 10px 20px rgba(0,0,0,0.2);
+
+header {
+  background: #111;
+  color: #fff;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.title{
-font-size:28px;
-font-weight:600;
-text-align:center;
-margin-bottom:20px;
+header h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #ff3c00;
+  font-size: 26px;
 }
 
-.input-box{
-margin:15px 0;
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
-.input-box input{
-width:100%;
-padding:10px;
-border:1px solid #ccc;
-border-radius:5px;
-outline:none;
-font-size:15px;
+nav a:hover {
+  color: #ff3c00;
 }
 
-.input-box input:focus{
-border-color:#dd2476;
+
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+  padding: 40px 20px;
 }
 
-.button input{
-background:#dd2476;
-color:white;
-border:none;
-cursor:pointer;
-font-size:16px;
+
+.container {
+  background: #fff;
+  width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  overflow: hidden;
 }
 
-.button input:hover{
-background:#c51f65;
+.card-header {
+  background: #111;
+  padding: 28px 30px;
+  text-align: center;
 }
 
-.login-link{
-text-align:center;
-margin-top:15px;
-font-size:14px;
+.card-header h2 {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.login-link a{
-color:#dd2476;
-text-decoration:none;
-font-weight:500;
+.card-header p {
+  color: #ff3c00;
+  font-size: 13px;
+  margin-top: 5px;
+  letter-spacing: 0.5px;
 }
 
+.card-body {
+  padding: 30px 35px;
+}
+
+
+.input-box {
+  margin-bottom: 18px;
+}
+
+.input-box label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 7px;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #fafafa;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.input-box input:focus {
+  border-color: #ff3c00;
+  background: white;
+}
+
+
+.strength-bar {
+  height: 4px;
+  border-radius: 4px;
+  margin-top: 6px;
+  background: #eee;
+  transition: 0.3s;
+}
+
+.strength-text {
+  font-size: 11px;
+  margin-top: 4px;
+  display: none;
+}
+
+
+.msg {
+  font-size: 11px;
+  margin-top: 4px;
+  display: none;
+}
+
+.msg.error { color: #e53935; }
+.msg.success { color: #43a047; }
+
+
+.register-btn {
+  width: 100%;
+  padding: 13px;
+  background: #ff3c00;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s, transform 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+.register-btn:hover {
+  background: #e63500;
+}
+
+.register-btn:active {
+  transform: scale(0.98);
+}
+
+
+.bottom-links {
+  text-align: center;
+  margin-top: 18px;
+  padding-bottom: 5px;
+}
+
+.bottom-links p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.bottom-links a {
+  color: #ff3c00;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.bottom-links a:hover {
+  text-decoration: underline;
+}
+
+.home-link {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #888;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.home-link:hover {
+  color: #ff3c00;
+}
+
+
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 18px 0;
+}
+
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-body {
+    padding: 25px 20px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
 </style>
-
 </head>
+
 <body>
 
-<div class="container">
 
-<div class="title">Register Form</div>
+<header>
+  <h1>Vasanth Trends</h1>
+  <nav>
+    <a href="vasanth13.html">Home</a>
+    <a href="vasanth13.html#dress">Dress</a>
+    <a href="vasanth13.html#contact">Contact</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
 
-<form action="#">
 
-<div class="input-box">
-<input type="text" placeholder="Enter Your Name" required>
+<div class="page-wrapper">
+  <div class="container">
+
+    <div class="card-header">
+      <h2>Create Account</h2>
+      <p>Join Vasanth Trends — Shop in Style!</p>
+    </div>
+
+    <div class="card-body">
+      <form onsubmit="return validateForm()">
+
+        
+        <div class="input-box">
+          <label>Full Name *</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+          <span class="msg error" id="nameMsg">⚠ Please enter your name</span>
+        </div>
+
+        
+        <div class="input-box">
+          <label>Email Address *</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <span class="msg error" id="emailMsg">⚠ Please enter a valid email</span>
+        </div>
+
+        
+        <div class="input-box">
+          <label>Mobile Number *</label>
+          <input type="tel" id="phone" placeholder="Enter 10-digit mobile number" maxlength="10" required>
+          <span class="msg error" id="phoneMsg">⚠ Enter valid 10-digit number</span>
+        </div>
+
+        
+        <div class="input-box">
+          <label>Create Password *</label>
+          <input type="password" id="password" placeholder="Minimum 6 characters" oninput="checkStrength()" required>
+          <div class="strength-bar" id="strengthBar"></div>
+          <span class="strength-text" id="strengthText"></span>
+          <span class="msg error" id="passwordMsg">⚠ Password must be at least 6 characters</span>
+        </div>
+
+        
+        <div class="input-box">
+          <label>Confirm Password *</label>
+          <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+          <span class="msg error" id="confirmMsg">⚠ Passwords do not match</span>
+          <span class="msg success" id="confirmSuccess">✅ Passwords match!</span>
+        </div>
+
+        <button type="submit" class="register-btn">Register Now</button>
+
+      </form>
+
+      <hr>
+
+      <div class="bottom-links">
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <a href="vasanth13.html" class="home-link">← Back to Home</a>
+      </div>
+
+    </div>
+  </div>
 </div>
 
-<div class="input-box">
-<input type="email" placeholder="Enter Your Email" required>
-</div>
 
-<div class="input-box">
-<input type="tel" placeholder="Enter Your Mobile number" required>
-</div>
+<footer>
+  <p>Address: 12, Main Road, Tirunelveli</p>
+  <p>Phone: 6385421981</p>
+  <p>© 2026 Vasanth Trends | All Rights Reserved</p>
+</footer>
 
-<div class="input-box">
-<input type="password" placeholder="Create Password" required>
-</div>
+<script>
 
-<div class="input-box">
-<input type="password" placeholder="Confirm Password" required>
-</div>
+  
+  function checkStrength() {
+    const pwd = document.getElementById("password").value;
+    const bar = document.getElementById("strengthBar");
+    const text = document.getElementById("strengthText");
 
-<div class="input-box button">
-<input type="submit" value="Register">
-</div>
+    text.style.display = "block";
 
-</form>
+    if (pwd.length === 0) {
+      bar.style.background = "#eee";
+      bar.style.width = "0%";
+      text.style.display = "none";
+    } else if (pwd.length < 4) {
+      bar.style.background = "#e53935";
+      bar.style.width = "33%";
+      text.textContent = "Weak";
+      text.style.color = "#e53935";
+    } else if (pwd.length < 7) {
+      bar.style.background = "#ff9800";
+      bar.style.width = "66%";
+      text.textContent = "Medium";
+      text.style.color = "#ff9800";
+    } else {
+      bar.style.background = "#43a047";
+      bar.style.width = "100%";
+      text.textContent = "Strong ✓";
+      text.style.color = "#43a047";
+    }
+  }
 
-<div class="login-link">
-Already have account? <a href="login.html">Login</a>
-</div>
+  
+  function validateForm() {
+    let isValid = true;
 
-<center><a href="vasanth13.html">Go to home</a></center>
+    const name     = document.getElementById("name").value.trim();
+    const email    = document.getElementById("email").value.trim();
+    const phone    = document.getElementById("phone").value.trim();
+    const password = document.getElementById("password").value;
+    const confirm  = document.getElementById("confirmPassword").value;
 
-</div>
+    
+    document.querySelectorAll(".msg").forEach(m => m.style.display = "none");
+
+    
+    if (!name) {
+      document.getElementById("nameMsg").style.display = "block";
+      isValid = false;
+    }
+
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      document.getElementById("emailMsg").style.display = "block";
+      isValid = false;
+    }
+
+    
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(phone)) {
+      document.getElementById("phoneMsg").style.display = "block";
+      isValid = false;
+    }
+
+    
+    if (password.length < 6) {
+      document.getElementById("passwordMsg").style.display = "block";
+      isValid = false;
+    }
 
 
+    if (password !== confirm) {
+      document.getElementById("confirmMsg").style.display = "block";
+      isValid = false;
+    } else if (confirm.length > 0 && password === confirm) {
+      document.getElementById("confirmSuccess").style.display = "block";
+    }
+
+    if (isValid) {
+      alert("✅ Registration Successful! Welcome to Vasanth Trends!");
+      
+    }
+
+    return false; 
+  }
+
+</script>
 
 </body>
 </html>
